@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'app.dart';
+import 'package:project/main.dart';
 import 'flavors.dart';
 
 void main() {
-  F.appFlavor = Flavor.[[FLAVOR_NAME]];
-  runApp(App());
+  AppFlavor.appFlavor = Flavor.[[FLAVOR_NAME]];
+  appMain();
 }

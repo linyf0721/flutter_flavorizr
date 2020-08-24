@@ -28,7 +28,7 @@ import 'package:flutter_flavorizr/processors/commons/shell_processor.dart';
 import 'package:flutter_flavorizr/utils/ios_utils.dart' as IOSUtils;
 
 class IOSBuildConfigurationsProcessor extends QueueProcessor {
-  static const List<String> _modes = ['Debug', 'Profile', 'Release'];
+  static const List<String> _modes = ['Debug', 'Release'];
 
   IOSBuildConfigurationsProcessor(
     String process,

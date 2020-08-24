@@ -65,17 +65,17 @@ class Processor extends AbstractProcessor<void> {
 
     // Flutter
     'flutter:flavors',
-    'flutter:app',
-    'flutter:pages',
+    // 'flutter:app',
+    // 'flutter:pages',
     'flutter:targets',
 
     // iOS
     'ios:xcconfig',
     'ios:buildTargets',
     'ios:schema',
-    'ios:dummyAssets',
+    // 'ios:dummyAssets',
     'ios:plist',
-    'ios:launchScreen',
+    // 'ios:launchScreen',
 
     // Cleanup
     'assets:clean',

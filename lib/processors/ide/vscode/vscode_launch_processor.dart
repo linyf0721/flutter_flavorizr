@@ -29,7 +29,7 @@ import 'package:flutter_flavorizr/processors/ide/vscode/models/launch.dart';
 
 class VSCodeLaunchProcessor extends StringProcessor {
   final Iterable<String> _flavorNames;
-  static const List<String> modes = ['Debug', 'Profile', 'Release'];
+  static const List<String> modes = ['Debug', 'Release'];
 
   VSCodeLaunchProcessor(this._flavorNames);
 

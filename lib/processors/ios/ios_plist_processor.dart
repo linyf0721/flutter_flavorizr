@@ -52,7 +52,7 @@ class IOSPListProcessor extends StringProcessor {
   void _updateUILaunchStoryboardName(XmlElement root) => _updatePListValueAtKey(
         root,
         'UILaunchStoryboardName',
-        '\$(ASSET_PREFIX)LaunchScreen',
+        'LaunchScreen',
       );
 
   void _updatePListValueAtKey(XmlElement root, String key, String value) {

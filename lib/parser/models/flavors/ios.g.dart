@@ -11,6 +11,6 @@ IOS _$IOSFromJson(Map json) {
       requiredKeys: const ['bundleId'], disallowNullValues: const ['bundleId']);
   return IOS(
     bundleId: json['bundleId'] as String,
-    generateDummyAssets: json['generateDummyAssets'] ?? true,
+    generateDummyAssets: json['generateDummyAssets'] ?? false,
   );
 }

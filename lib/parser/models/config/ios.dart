@@ -28,7 +28,10 @@ part 'ios.g.dart';
 
 @JsonSerializable(anyMap: true, createToJson: false)
 class IOS {
-  IOS();
+  IOS({this.generateDummyAssets, this.bundleId});
+
+  final String bundleId;
+  final bool generateDummyAssets;
 
   factory IOS.fromJson(Map<String, dynamic> json) => _$IOSFromJson(json);
 }

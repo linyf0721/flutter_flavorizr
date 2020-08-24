@@ -42,6 +42,9 @@ class FlutterFlavorsProcessor extends StringProcessor {
   }
 
   void _appendFlavorEnum(StringBuffer buffer) {
+    buffer.writeln('import \'package:ngr_base_lib/ngrbaselib.dart\';');
+    buffer.writeln('import \'package:ngr_work_standard/env/env.dart\';');
+
     buffer.writeln('enum Flavor {');
 
     _flavors.keys.forEach((String flavorName) {
@@ -53,20 +56,23 @@ class FlutterFlavorsProcessor extends StringProcessor {
 
   void _appendFlavorClass(StringBuffer buffer) {
     buffer.writeln();
-    buffer.writeln('class F {');
+
+    buffer.writeln('class AppFlavor {');
     buffer.writeln('  static Flavor appFlavor;');
     buffer.writeln();
 
-    buffer.writeln('  static String get title {');
+    buffer.writeln('  static ENV get env {');
     buffer.writeln('    switch (appFlavor) {');
 
     _flavors.forEach((String name, Flavor flavor) {
       buffer.writeln('      case Flavor.${name.toUpperCase()}:');
-      buffer.writeln('        return \'${flavor.app.name}\';');
+      buffer.writeln('        return ENV.${name.toUpperCase()};');
     });
 
     buffer.writeln('      default:');
-    buffer.writeln('        return \'title\';');
+    buffer.writeln('        Toast.show("没有找到当前环境，默认发布环境");');
+    buffer.writeln('        Log.e("没有找到当前环境，默认发布环境");');
+    buffer.writeln('        return ENV.MASTER;');
     buffer.writeln('    }');
     buffer.writeln('  }');
 

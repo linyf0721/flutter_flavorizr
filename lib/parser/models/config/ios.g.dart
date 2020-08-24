@@ -7,5 +7,7 @@ part of 'ios.dart';
 // **************************************************************************
 
 IOS _$IOSFromJson(Map json) {
-  return IOS();
+  return IOS(
+      bundleId: json["bundleId"] as String ?? null,
+      generateDummyAssets: json["generateDummyAssets"] as bool ?? null);
 }

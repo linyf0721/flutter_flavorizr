@@ -25,6 +25,7 @@
 
 import 'package:flutter_flavorizr/parser/models/flavors/commons/os.dart';
 import 'package:flutter_flavorizr/processors/commons/copy_folder_processor.dart';
+import 'package:flutter_flavorizr/utils/flavorizr_mgr.dart';
 
 class DummyAssetsProcessor extends CopyFolderProcessor {
   final OS _os;
@@ -37,7 +38,10 @@ class DummyAssetsProcessor extends CopyFolderProcessor {
 
   @override
   void execute() {
-    if (_os.generateDummyAssets) {
+    bool generateDummyAssets = _os.generateDummyAssets != null
+        ? _os.generateDummyAssets
+        : FlavorizrMgr.instance().flavorizr.app.generateDummyAssets;
+    if (generateDummyAssets) {
       super.execute();
     }
   }

@@ -30,8 +30,11 @@ part 'android.g.dart';
 class Android {
   @JsonKey(defaultValue: 'flavor-type')
   final String flavorDimensions;
+  final String applicationId;
+  final bool generateDummyAssets;
 
-  Android({this.flavorDimensions});
+  Android(
+      {this.flavorDimensions, this.applicationId, this.generateDummyAssets});
 
   factory Android.fromJson(Map<String, dynamic> json) =>
       _$AndroidFromJson(json);

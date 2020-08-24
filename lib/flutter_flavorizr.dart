@@ -29,10 +29,12 @@ import 'package:args/args.dart';
 import 'package:flutter_flavorizr/parser/models/pubspec.dart';
 import 'package:flutter_flavorizr/parser/parser.dart';
 import 'package:flutter_flavorizr/processors/processor.dart';
+import 'package:flutter_flavorizr/utils/flavorizr_mgr.dart';
 
 void execute(List<String> args) {
   ArgParser argParser = ArgParser();
-  argParser.addMultiOption('processors', abbr: 'p', allowed: Processor.defaultInstructionSet, splitCommas: true);
+  argParser.addMultiOption('processors',
+      abbr: 'p', allowed: Processor.defaultInstructionSet, splitCommas: true);
   ArgResults results = argParser.parse(args);
   List<String> argProcessors = results['processors'];
 
@@ -44,6 +46,8 @@ void execute(List<String> args) {
   } catch (e) {
     stderr.writeln(e);
   }
+
+  FlavorizrMgr.instance().flavorizr = pubspec.flavorizr;
 
   if (argProcessors.isNotEmpty) {
     pubspec.flavorizr.instructions = argProcessors;

@@ -12,6 +12,6 @@ Android _$AndroidFromJson(Map json) {
       disallowNullValues: const ['applicationId']);
   return Android(
     applicationId: json['applicationId'] as String,
-    generateDummyAssets: json['generateDummyAssets'] ?? true,
+    generateDummyAssets: json['generateDummyAssets'] ?? false,
   );
 }

@@ -36,7 +36,11 @@ class App {
 
   final IOS ios;
 
-  App({this.android, this.ios});
+  final String name;
+
+  final bool generateDummyAssets;
+
+  App({this.name, this.android, this.ios, this.generateDummyAssets});
 
   factory App.fromJson(Map<String, dynamic> json) => _$AppFromJson(json);
 }

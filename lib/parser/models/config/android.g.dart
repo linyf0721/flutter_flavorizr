@@ -8,6 +8,7 @@ part of 'android.dart';
 
 Android _$AndroidFromJson(Map json) {
   return Android(
-    flavorDimensions: json['flavorDimensions'] as String ?? 'flavor-type',
-  );
+      flavorDimensions: json['flavorDimensions'] as String ?? 'flavor-type',
+      applicationId: json["applicationId"] as String ?? null,
+      generateDummyAssets: json["generateDummyAssets"] as bool ?? null);
 }
