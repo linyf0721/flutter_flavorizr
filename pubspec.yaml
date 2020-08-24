@@ -4,6 +4,8 @@ version: 1.0.7
 repository: https://github.com/AngeloAvv/flutter_flavorizr
 issue_tracker: https://github.com/AngeloAvv/flutter_flavorizr/issues
 homepage: https://www.angelocassano.it
+author: 林云飞<lyf_0721@163.com>
+publish_to: http://139.9.115.167:10088
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
