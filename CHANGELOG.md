@@ -1,23 +1,33 @@
+## 1.0.8
+
+- 改为读取 json 配置文件
+
 ## 1.0.7
-* Bumped dependencies
+
+- Bumped dependencies
 
 ## 1.0.6
-* Bumped dependencies
+
+- Bumped dependencies
 
 ## 1.0.5
-* Bumped dependencies
+
+- Bumped dependencies
 
 ## 1.0.4
-* Added processors param to the command line
+
+- Added processors param to the command line
 
 ## 1.0.3
-* Added IDE processors (vscode and idea)
-* Updated README
+
+- Added IDE processors (vscode and idea)
+- Updated README
 
 ## 1.0.2
-* Fixed zip asset extraction using sync
-* Fixed zip asset creation with recursive param
+
+- Fixed zip asset extraction using sync
+- Fixed zip asset creation with recursive param
 
 ## 1.0.1
 
-* First release!
+- First release!

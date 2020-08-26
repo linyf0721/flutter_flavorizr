@@ -1,0 +1,122 @@
+{
+    "ide": "vscode",
+    "app": {
+        "android": {
+            "flavorDimensions": "flavor-type"
+        },
+        "ios": {}
+    },
+    "flavors": {
+        "master": {
+            "app": {
+                "name": "掌上邵医"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "preMaster": {
+            "app": {
+                "name": "掌上邵医预发布"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "devTest": {
+            "app": {
+                "name": "掌上邵医开发测试"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "test": {
+            "app": {
+                "name": "掌上邵医测试"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "feature1": {
+            "app": {
+                "name": "掌上邵医f1"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "feature2": {
+            "app": {
+                "name": "掌上邵医f2"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "feature3": {
+            "app": {
+                "name": "掌上邵医f3"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "feature4": {
+            "app": {
+                "name": "掌上邵医f4"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "feature5": {
+            "app": {
+                "name": "掌上邵医f5"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        },
+        "feature6": {
+            "app": {
+                "name": "掌上邵医f6"
+            },
+            "android": {
+                "applicationId": "com.easygroup.ngaripatient.syf"
+            },
+            "ios": {
+                "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+            }
+        }
+    }
+
+}

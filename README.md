@@ -21,9 +21,10 @@ existing project could throw errors.
 
 Before running Flutter Flavorizr, you must install the following
 software:
-* [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-* [Gem](https://rubygems.org/pages/download)
-* [Xcodeproj](https://github.com/CocoaPods/Xcodeproj) (through RubyGems)
+
+- [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
+- [Gem](https://rubygems.org/pages/download)
+- [Xcodeproj](https://github.com/CocoaPods/Xcodeproj) (through RubyGems)
 
 These prerequisites are needed to manipulate the iOS project and
 schemes. If you are interested in flavorizing Android only, you can skip
@@ -58,37 +59,51 @@ flavors.
 
 ### Example
 
-Add a new key named flavorizr and define two sub-items: *app* and
-*flavors*. Under the flavors array you can define the name of the
-flavors, in our example *apple* and *banana*. For each flavor you have
-to specify the *app name*, the *applicationId* and the *bundleId*.
+Add a new key named flavorizr and define two sub-items: _app_ and
+_flavors_. Under the flavors array you can define the name of the
+flavors, in our example _apple_ and _banana_. For each flavor you have
+to specify the _app name_, the _applicationId_ and the _bundleId_.
 
 ```
-flavorizr:
-  app:
-    android:
-      flavorDimensions: "flavor-type"
-    ios:
+flavorizr:"flavors.json"
+```
 
-  flavors:
-    apple:
-      app:
-        name: "Apple App"
+在项目工程下创建 flavors.json 文件
 
-      android:
-        applicationId: "com.example.apple"
-
-      ios:
-        bundleId: "com.example.apple"
-
-    banana:
-      app:
-        name: "Banana App"
-
-      android:
-        applicationId: "com.example.banana"
-      ios:
-        bundleId: "com.example.banana"
+```json
+{
+  "ide": "vscode",
+  "app": {
+    "android": {
+      "flavorDimensions": "flavor-type"
+    },
+    "ios": {}
+  },
+  "flavors": {
+    "master": {
+      "app": {
+        "name": "掌上邵医"
+      },
+      "android": {
+        "applicationId": "com.easygroup.ngaripatient.syf"
+      },
+      "ios": {
+        "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+      }
+    },
+    "preMaster": {
+      "app": {
+        "name": "掌上邵医预发布"
+      },
+      "android": {
+        "applicationId": "com.easygroup.ngaripatient.syf"
+      },
+      "ios": {
+        "bundleId": "com.ngarihealth.enterprise.patient.sfy"
+      }
+    }
+  }
+}
 ```
 
 ### Available fields
@@ -96,7 +111,7 @@ flavorizr:
 #### flavorizr
 
 | key                                     | type   | default                                                                            | required | description                                                                                   |
-|:----------------------------------------|:-------|:-----------------------------------------------------------------------------------|:---------|:----------------------------------------------------------------------------------------------|
+| :-------------------------------------- | :----- | :--------------------------------------------------------------------------------- | :------- | :-------------------------------------------------------------------------------------------- |
 | app                                     | Object |                                                                                    | true     | An object describing the general capabilities of an app                                       |
 | flavors                                 | Array  |                                                                                    | true     | An array of items. Each of them describes a flavor configuration                              |
 | [instructions](#available-instructions) | Array  |                                                                                    | false    | An array of instructions to customize the flavorizr process                                   |
@@ -106,7 +121,7 @@ flavorizr:
 ##### <a href="#available-instructions">Available instructions</a>
 
 | value                   | category      | description                                                             |
-|:------------------------|:--------------|:------------------------------------------------------------------------|
+| :---------------------- | :------------ | :---------------------------------------------------------------------- |
 | assets:download         | Miscellaneous | Downloads the assets zip from the network                               |
 | assets:extract          | Miscellaneous | Extracts the downloaded zip in the project .tmp directory               |
 | assets:clean            | Miscellaneous | Removes the assets from the project directory                           |
@@ -128,26 +143,26 @@ flavorizr:
 #### android (under app)
 
 | key              | type   | default       | required | description                                                        |
-|:-----------------|:-------|:--------------|:---------|:-------------------------------------------------------------------|
+| :--------------- | :----- | :------------ | :------- | :----------------------------------------------------------------- |
 | flavorDimensions | String | "flavor-type" | false    | The value of the flavorDimensions in the android build.gradle file |
 
-#### app (under *flavorname*)
+#### app (under flavorname)
 
 | key  | type   | default | required | description         |
-|:-----|:-------|:--------|:---------|:--------------------|
+| :--- | :----- | :------ | :------- | :------------------ |
 | name | String |         | true     | The name of the App |
 
-#### android (under *flavorname*)
+#### android (under flavorname)
 
 | key                 | type   | default | required | description                                                        |
-|:--------------------|:-------|:--------|:---------|:-------------------------------------------------------------------|
+| :------------------ | :----- | :------ | :------- | :----------------------------------------------------------------- |
 | applicationId       | String |         | true     | The applicationId of the Android App                               |
 | generateDummyAssets | bool   | true    | false    | True if you want to generate dummy assets (icon set, strings, etc) |
 
-#### ios (under *flavorname*)
+#### ios (under flavorname)
 
 | key                 | type   | default | required | description                                               |
-|:--------------------|:-------|:--------|:---------|:----------------------------------------------------------|
+| :------------------ | :----- | :------ | :------- | :-------------------------------------------------------- |
 | bundleId            | String |         | true     | The bundleId of the iOS App                               |
 | generateDummyAssets | bool   | true    | false    | True if you want to generate dummy assets (xcassets, etc) |
 
@@ -165,6 +180,7 @@ You can also run flutter_flavorizr with a custom set of processors by appending 
 ```
 flutter pub run flutter_flavorizr -p <processor_1>,<processor_2>
 ```
+
 Example
 
 ```
@@ -222,12 +238,11 @@ getters, you can find an example under the pages folder: in the
 my_home_page.dart file, the page shown after the launch of the app, we
 can see a clear reference on the title getter defined in the F class.
 
-
 ## Further developments
 
-* Let the user define its custom set of available instructions.
-* Create Firebase processors.
-* Use a groovy parser to better manipulate the build.gradle file
+- Let the user define its custom set of available instructions.
+- Create Firebase processors.
+- Use a groovy parser to better manipulate the build.gradle file
 
 Please feel free to submit new issues if you encounter some problems
 with it.

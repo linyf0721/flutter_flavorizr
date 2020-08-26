@@ -8,8 +8,15 @@ part of 'pubspec.dart';
 
 Pubspec _$PubspecFromJson(Map json) {
   $checkKeys(json, requiredKeys: const ['flavorizr']);
+  String flavorPath = json['flavorizr'];
+  File flavorFile = File(flavorPath);
+  if (!flavorFile.existsSync()) {
+    throw FileNotFoundException(flavorPath);
+  }
+
+  String flavorInfo = flavorFile.readAsStringSync();
+
   return Pubspec(
-    flavorizr:
-        Flavorizr.fromJson(Map<String, dynamic>.from(json['flavorizr'] as Map)),
+    flavorizr: Flavorizr.fromJson(jsonDecode(flavorInfo)),
   );
 }
